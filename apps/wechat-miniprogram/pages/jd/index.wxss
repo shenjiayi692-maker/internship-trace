@@ -1,0 +1,20 @@
+.jd-input { min-height: 340rpx; }
+.or { display: flex; align-items: center; margin: 28rpx 0; }
+.or-line { flex: 1; height: 1rpx; background: #dfe5ea; }
+.or-copy { margin: 0 20rpx; color: #96a0aa; font-size: 22rpx; }
+.screenshot-button { width: 100%; }
+.screenshot-preview { display: flex; align-items: center; margin-top: 20rpx; }
+.screenshot-preview image { flex: 0 0 auto; width: 100rpx; height: 100rpx; margin-right: 20rpx; border-radius: 12rpx; background: #e9edf1; }
+.screenshot-title { font-size: 25rpx; }
+.remove { margin-left: 18rpx; color: #b64b46; font-size: 22rpx; }
+.notice { margin-top: 22rpx; }
+.job-head { margin-top: 36rpx; }
+.job-title { margin-top: 22rpx; color: #142b4a; font-size: 38rpx; font-weight: 720; }
+.match-summary { display: flex; margin-top: 30rpx; padding-top: 26rpx; border-top: 1rpx solid #e7ebef; }
+.match-summary > view { flex: 1; }
+.summary-number { margin-right: 10rpx; color: #1f8a7a; font-size: 36rpx; font-weight: 700; }
+.gap-number { color: #a96317; }
+.summary-label { color: #6e7b88; font-size: 23rpx; }
+.match-title { max-width: 420rpx; font-size: 27rpx; }
+.evidence-count { margin-top: 18rpx; color: #1f8a7a; font-size: 22rpx; }
+.gap-action { margin-top: 18rpx; padding: 18rpx; border-radius: 12rpx; background: #fff8ed; color: #80511b; font-size: 22rpx; line-height: 1.5; }

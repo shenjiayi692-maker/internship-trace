@@ -1,0 +1,21 @@
+<view class="screen screen-with-action" wx:if="{{job}}">
+  <view class="row-between"><view><view class="eyebrow">EVIDENCE-BASED OUTPUT</view><view class="page-title">{{job.title}}</view></view><prototype-badge /></view>
+  <view class="page-subtitle">每条表达都引用真实事实；风险点不会被悄悄润色掉。</view>
+  <view class="segmented main-tabs"><view class="segment {{tab === 'cv' ? 'segment-active' : ''}}" data-value="cv" bindtap="setTab">CV要点</view><view class="segment {{tab === 'interview' ? 'segment-active' : ''}}" data-value="interview" bindtap="setTab">面试准备</view></view>
+  <view class="language-row"><view class="section-title">输出语言</view><view class="small-segment"><view class="small-option {{language === 'zh' ? 'small-active' : ''}}" data-value="zh" bindtap="setLanguage">中</view><view class="small-option {{language === 'en' ? 'small-active' : ''}}" data-value="en" bindtap="setLanguage">EN</view></view></view>
+
+  <view wx:if="{{tab === 'cv'}}">
+    <view class="output-card card" wx:for="{{cvItems}}" wx:key="content">
+      <view class="bullet-index">{{index + 1}}</view><view class="bullet-copy">{{item.content}}</view><view wx:if="{{item.sourceTitle}}" class="source-tag">来源：{{item.sourceTitle}}</view>
+    </view>
+    <view wx:if="{{!cv.content.length}}" class="empty-state"><view class="empty-icon">缺</view><view class="card-title">目前没有足够证据生成CV要点</view><view class="card-copy">先记录并确认一段真实经历，再回来匹配这个岗位。</view></view>
+    <view class="notice"><view class="dot"></view><view><view class="risk-title">写入CV前请确认</view><view wx:for="{{cv.riskFlags}}" wx:key="*this">{{item}}</view></view></view>
+  </view>
+  <view wx:else>
+    <view class="question-card card" wx:for="{{interview.content}}" wx:key="*this" data-index="{{index}}" bindtap="toggleQuestion"><view class="row-between"><view class="question-title"><text class="question-number">Q{{index + 1}}</text>{{item}}</view><view class="chevron">{{expandedQuestion === index ? '−' : '+'}}</view></view><view wx:if="{{expandedQuestion === index}}" class="answer-guide"><view class="answer-label">回答时请覆盖</view><view>背景与目标 · 你的具体行动 · 事实口径 · 个人与团队贡献 · 复盘</view></view></view>
+    <view class="notice notice-info"><view class="dot"></view><view>这些问题来自你CV中的事实与风险点，不是通用题库。</view></view>
+  </view>
+  <view class="section-head"><view class="section-title">证据来源</view><view class="muted text-small">点击核对事实</view></view>
+  <view class="source-card card" wx:for="{{sourceCards}}" wx:key="id" data-id="{{item.id}}" bindtap="openSource"><view class="grow"><view class="card-title source-title">{{item.title}}</view><view class="pill-row"><view class="pill pill-neutral" wx:for="{{item.competencyTags}}" wx:key="*this">{{item}}</view></view></view><view class="source-score">{{item.score}}</view></view>
+  <view class="fixed-action"><view class="result-actions"><button class="button-secondary result-button" bindtap="backGenerate">回到生成中心</button><button class="button-primary result-button" bindtap="copy">复制{{tab === 'cv' ? 'CV要点' : '面试问题'}}</button></view></view>
+</view>

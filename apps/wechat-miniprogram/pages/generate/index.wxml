@@ -1,0 +1,24 @@
+<view class="screen">
+  <view class="row-between"><view><view class="eyebrow">USE YOUR EVIDENCE</view><view class="page-title">从事实到表达</view></view><prototype-badge /></view>
+  <view class="page-subtitle">选择使用场景，系统只调用与你确认过的职业证据。</view>
+  <view class="generate-list">
+    <view class="generate-card weekly" bindtap="openWeekly">
+      <view class="generate-index">01</view><view class="generate-icon">周</view>
+      <view class="generate-title">生成周报</view><view class="generate-copy">框选时间，整理完成事项、风险和下周计划。</view><view class="generate-action">选择时间范围 →</view>
+    </view>
+    <view class="generate-card" bindtap="openJob">
+      <view class="generate-index">02</view><view class="generate-icon">岗</view>
+      <view class="generate-title">JD匹配与CV要点</view><view class="generate-copy">粘贴文字或选择截图，找到岗位要求背后的真实证据。</view><view class="generate-action">分析目标岗位 →</view>
+    </view>
+    <view class="generate-card" bindtap="openInterview">
+      <view class="generate-index">03</view><view class="generate-icon">问</view>
+      <view class="generate-title">针对性面试准备</view><view class="generate-copy">围绕CV中的事实，预判会被追问的口径、贡献与结果。</view><view class="generate-action">开始准备 →</view>
+    </view>
+  </view>
+  <view class="principle-card">
+    <view class="principle-title">实习迹的生成原则</view>
+    <view class="principle-row"><view class="dot"></view><view>没有证据支持的内容，不会凭空生成。</view></view>
+    <view class="principle-row"><view class="dot"></view><view>未确认的数字会明确标注，不直接写入CV。</view></view>
+    <view class="principle-row"><view class="dot"></view><view>每一句求职表达都可以追溯到事实卡。</view></view>
+  </view>
+</view>

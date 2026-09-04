@@ -1,0 +1,17 @@
+.onboarding { min-height: 100vh; padding: calc(92rpx + env(safe-area-inset-top)) 40rpx 48rpx; background: #f5f7f9; }
+.brand-row { display: flex; align-items: center; }
+.brand-mark { display: flex; align-items: center; justify-content: center; width: 64rpx; height: 64rpx; border-radius: 16rpx; background: #142b4a; color: #fff; font-size: 30rpx; font-weight: 700; }
+.brand-name { margin: 0 auto 0 18rpx; color: #142b4a; font-size: 30rpx; font-weight: 700; }
+.hero { padding: 96rpx 0 72rpx; border-bottom: 1rpx solid #dfe5ea; }
+.hero-title { margin-top: 18rpx; color: #142b4a; font-size: 64rpx; font-weight: 750; line-height: 1.25; letter-spacing: -2rpx; }
+.hero-copy { margin-top: 28rpx; color: #5e6b78; font-size: 28rpx; line-height: 1.8; }
+.promise-list { padding: 36rpx 0 18rpx; }
+.promise { display: flex; margin: 0 0 30rpx; }
+.promise-index { flex: 0 0 auto; margin-right: 24rpx; color: #1f8a7a; font-size: 22rpx; font-weight: 700; }
+.promise-title { color: #142b4a; font-size: 28rpx; font-weight: 650; }
+.promise-copy { margin-top: 6rpx; color: #6e7b88; font-size: 24rpx; line-height: 1.6; }
+.consent { display: flex; margin: 8rpx 0 32rpx; padding: 22rpx; border-radius: 14rpx; background: #edf0f3; }
+.checkbox { flex: 0 0 auto; display: flex; align-items: center; justify-content: center; width: 36rpx; height: 36rpx; margin: 2rpx 18rpx 0 0; border: 2rpx solid #b3bec8; border-radius: 8rpx; color: #fff; font-size: 22rpx; }
+.checkbox-checked { border-color: #1f8a7a; background: #1f8a7a; }
+.consent-copy { color: #5e6b78; font-size: 22rpx; line-height: 1.55; }
+.footer-note { margin-top: 24rpx; color: #8b96a0; font-size: 21rpx; text-align: center; }

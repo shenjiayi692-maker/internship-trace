@@ -1,0 +1,21 @@
+.main-tabs { margin-top: 34rpx; }
+.language-row { display: flex; align-items: center; justify-content: space-between; margin: 34rpx 0 20rpx; }
+.small-segment { display: flex; padding: 4rpx; border-radius: 10rpx; background: #e9edf1; }
+.small-option { padding: 10rpx 18rpx; border-radius: 7rpx; color: #6e7b88; font-size: 21rpx; }
+.small-active { background: #fff; color: #142b4a; font-weight: 650; }
+.output-card { position: relative; padding-left: 76rpx; }
+.bullet-index { position: absolute; top: 28rpx; left: 26rpx; display: flex; align-items: center; justify-content: center; width: 36rpx; height: 36rpx; border-radius: 50%; background: #edf6f4; color: #176e62; font-size: 19rpx; font-weight: 700; }
+.bullet-copy { color: #26394e; font-size: 27rpx; line-height: 1.7; }
+.source-tag { margin-top: 18rpx; color: #1f8a7a; font-size: 21rpx; }
+.risk-title { margin-bottom: 8rpx; font-weight: 650; }
+.question-title { max-width: 570rpx; color: #26394e; font-size: 26rpx; font-weight: 600; line-height: 1.55; }
+.question-number { margin-right: 14rpx; color: #1f8a7a; font-size: 21rpx; font-weight: 700; }
+.chevron { color: #1f8a7a; font-size: 30rpx; }
+.answer-guide { margin-top: 22rpx; padding: 20rpx; border-radius: 12rpx; background: #f5f7f9; color: #65727f; font-size: 23rpx; line-height: 1.6; }
+.answer-label { margin-bottom: 6rpx; color: #142b4a; font-weight: 650; }
+.source-card { display: flex; align-items: center; }
+.source-title { font-size: 26rpx; }
+.source-score { margin-left: 16rpx; color: #1f8a7a; font-size: 30rpx; font-weight: 700; }
+.result-actions { display: flex; }
+.result-button { flex: 1; margin: 0; }
+.result-button + .result-button { margin-left: 16rpx; }

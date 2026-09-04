@@ -1,0 +1,16 @@
+.generate-list { margin-top: 36rpx; }
+.generate-card { position: relative; margin-bottom: 20rpx; padding: 34rpx; overflow: hidden; border: 1rpx solid #e1e7ec; border-radius: 22rpx; background: #fff; }
+.generate-card.weekly { background: #142b4a; }
+.generate-index { position: absolute; top: 26rpx; right: 30rpx; color: #b3bec8; font-size: 22rpx; font-weight: 700; }
+.generate-icon { display: flex; align-items: center; justify-content: center; width: 68rpx; height: 68rpx; border-radius: 18rpx; background: #edf6f4; color: #1f8a7a; font-size: 25rpx; font-weight: 700; }
+.weekly .generate-icon { background: #244461; color: #80d2c5; }
+.generate-title { margin-top: 28rpx; color: #142b4a; font-size: 32rpx; font-weight: 700; }
+.weekly .generate-title { color: #fff; }
+.generate-copy { margin-top: 10rpx; color: #6e7b88; font-size: 25rpx; line-height: 1.6; }
+.weekly .generate-copy { color: #bec9d4; }
+.generate-action { margin-top: 24rpx; color: #1f8a7a; font-size: 24rpx; font-weight: 650; }
+.weekly .generate-action { color: #80d2c5; }
+.principle-card { margin-top: 38rpx; padding: 28rpx; border-radius: 18rpx; background: #edf0f3; color: #5e6b78; }
+.principle-title { margin-bottom: 18rpx; color: #142b4a; font-size: 25rpx; font-weight: 650; }
+.principle-row { display: flex; margin-top: 12rpx; font-size: 23rpx; line-height: 1.55; }
+.principle-row .dot { margin-top: 10rpx; }

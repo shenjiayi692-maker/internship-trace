@@ -1,0 +1,39 @@
+<view class="screen">
+  <view class="row-between top-line"><view><view class="eyebrow">{{todayLabel}}</view><view class="page-title">今天，留下什么？</view></view><prototype-badge /></view>
+  <view class="capture-card">
+    <view class="capture-label">一分钟记录</view>
+    <view class="capture-title">今天在实习中做了什么？</view>
+    <view class="capture-copy">不用整理语言，说一句也可以。</view>
+    <view class="capture-actions">
+      <button class="voice-button" bindtap="startVoice"><text class="voice-icon">●</text> 按住说话</button>
+      <button class="text-button" bindtap="startText">文字记录</button>
+    </view>
+  </view>
+
+  <view class="section-head"><view class="section-title">本周职业资产</view><view class="section-link" bindtap="openAssets">查看全部</view></view>
+  <view class="card stats-card">
+    <view class="stat"><view class="stat-value">{{entryCount}}</view><view class="stat-label">条记录</view></view>
+    <view class="stat-divider"></view>
+    <view class="stat"><view class="stat-value">{{skillCount}}</view><view class="stat-label">项能力</view></view>
+    <view class="stat-divider"></view>
+    <view class="stat"><view class="stat-value">{{averageScore}}%</view><view class="stat-label">证据完整</view></view>
+  </view>
+
+  <view wx:if="{{pendingCard}}" class="section-head"><view class="section-title">待补充</view><view class="pill pill-warning">1项</view></view>
+  <view wx:if="{{pendingCard}}" class="card pending-card" bindtap="openPending">
+    <view class="pending-bar"></view><view class="grow"><view class="card-title">{{pendingCard.title}}</view><view class="card-copy">还缺：{{pendingCard.missingFields[0]}}</view><view class="pending-link">补充一个关键结果 →</view></view>
+  </view>
+
+  <view class="section-head"><view class="section-title">职业教练</view><view class="muted text-small">{{coach.period}}</view></view>
+  <view class="coach-card">
+    <view class="coach-label">下一步建议</view>
+    <view class="coach-copy">{{coach.suggestedAction}}</view>
+    <view class="coach-reason">依据：{{coach.gap}}</view>
+  </view>
+
+  <view class="section-head"><view class="section-title">最近沉淀</view></view>
+  <view class="card evidence-mini" wx:for="{{recentCards}}" wx:key="id" data-id="{{item.id}}" bindtap="openCard">
+    <view class="grow"><view class="card-title">{{item.title}}</view><view class="pill-row"><view class="pill" wx:for="{{item.competencyTags}}" wx:key="*this">{{item}}</view></view></view>
+    <view class="mini-score">{{item.score}}</view>
+  </view>
+</view>

@@ -1,0 +1,42 @@
+<view class="capture-screen">
+  <view class="capture-head">
+    <view><view class="eyebrow">60秒职业记录</view><view class="capture-progress"><view class="progress-bar" style="width: {{step === 'input' ? 25 : step === 'followup' ? 55 : step === 'review' ? 82 : 100}}%;"></view></view></view>
+    <prototype-badge />
+  </view>
+
+  <view wx:if="{{step === 'input'}}" class="flow-content">
+    <view class="flow-step">第 1 步</view><view class="flow-title">今天做了什么？</view><view class="flow-copy">不用写成日报，先说事实。系统稍后会帮你补齐背景、行动和结果。</view>
+    <view class="segmented mode-switch"><view class="segment {{mode === 'text' ? 'segment-active' : ''}}" data-mode="text" bindtap="switchMode">文字</view><view class="segment {{mode === 'voice' ? 'segment-active' : ''}}" data-mode="voice" bindtap="switchMode">按住说话</view></view>
+    <textarea wx:if="{{mode === 'text'}}" class="textarea-box main-input" value="{{inputText}}" maxlength="500" placeholder="例如：今天整理了三个渠道的活动数据，还做了一版周报模板……" bindinput="onInput" />
+    <view wx:else class="voice-panel">
+      <view class="voice-status">{{isRecording ? '正在模拟录音 · ' + recordSeconds + '秒' : inputText ? '已生成模拟转写' : '按住下方按钮开始'}}</view>
+      <button class="hold-button {{isRecording ? 'holding' : ''}}" bindtouchstart="startRecording" bindtouchend="stopRecording" bindtouchcancel="stopRecording">{{isRecording ? '松开结束' : '按住说话'}}</button>
+      <view wx:if="{{inputText}}" class="transcript"><view class="prototype-badge">模拟转写</view><view class="transcript-copy">{{inputText}}</view></view>
+    </view>
+    <view class="privacy-line">内容仅保存在本地；录音不上传、不保存。</view>
+  </view>
+
+  <view wx:if="{{step === 'followup'}}" class="flow-content">
+    <view class="flow-step">第 {{currentQuestion + 2}} 步 · 追问最多2次</view><view class="flow-title">{{questions[currentQuestion]}}</view><view class="flow-copy">只补最重要的信息。答不上来可以跳过，系统不会替你编造。</view>
+    <view wx:if="{{sensitiveChanged}}" class="notice"><view class="dot"></view><view>检测到可能的公司名或联系方式；用于模拟处理的文本已自动隐藏敏感部分。</view></view>
+    <textarea class="textarea-box answer-input" value="{{currentAnswer}}" maxlength="300" placeholder="写下你确定的事实……" focus="true" bindinput="onAnswerInput" />
+    <view class="question-count">{{currentQuestion + 1}} / {{questions.length}}</view>
+  </view>
+
+  <scroll-view wx:if="{{step === 'review'}}" class="review-scroll" scroll-y="true">
+    <view class="flow-content review-content"><view class="flow-step">确认事实</view><view class="flow-title">这会成为一张职业证据卡</view><view class="flow-copy">先检查事实是否准确。保存后仍可继续补充和确认。</view>
+      <view class="notice notice-info"><view class="dot"></view><view>AI整理为原型模拟；没有增加原始记录之外的量化结果。</view></view>
+      <view class="card preview-card"><view class="row-between"><view class="pill pill-warning">尚未确认</view><view class="score"><text>{{previewCard.score}}</text><text class="score-label">完整度</text></view></view><view class="card-title preview-title">{{previewCard.title}}</view><view class="preview-label">你的行动</view><view class="preview-action" wx:for="{{previewCard.actions}}" wx:key="*this">· {{item}}</view><view class="preview-label">初步结果</view><view class="card-copy">{{previewCard.result || '尚未补充结果'}}</view><view class="pill-row"><view class="pill" wx:for="{{previewCard.competencyTags}}" wx:key="*this">{{item}}</view></view></view>
+      <button class="button-secondary edit-button" bindtap="editInput">返回修改原始记录</button>
+    </view>
+  </scroll-view>
+
+  <view wx:if="{{step === 'saved'}}" class="saved-state"><view class="saved-check">✓</view><view class="flow-title">今天的工作，已经留下来了</view><view class="flow-copy text-center">证据卡尚未完全确认。你可以现在检查，也可以稍后从资产库继续补充。</view><button class="button-primary saved-button" bindtap="openSavedCard">查看并确认事实卡</button><button class="button-secondary saved-button" bindtap="backHome">回到今日</button></view>
+
+  <view wx:if="{{step !== 'saved'}}" class="capture-actions-fixed">
+    <view class="cancel" bindtap="cancelFlow">取消</view>
+    <button wx:if="{{step === 'input'}}" class="button-primary next-button" bindtap="submitInput">继续</button>
+    <view wx:if="{{step === 'followup'}}" class="follow-buttons"><button class="button-secondary skip-button" bindtap="skipAnswer">暂时跳过</button><button class="button-primary next-button" bindtap="submitAnswer">保存回答</button></view>
+    <button wx:if="{{step === 'review'}}" class="button-primary next-button" bindtap="saveRecord">保存记录与证据卡</button>
+  </view>
+</view>

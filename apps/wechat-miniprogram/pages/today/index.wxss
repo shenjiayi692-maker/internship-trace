@@ -1,0 +1,24 @@
+.top-line { align-items: flex-start; }
+.capture-card { margin-top: 42rpx; padding: 34rpx; border-radius: 24rpx; background: #142b4a; color: #fff; }
+.capture-label { color: #7ed0c3; font-size: 22rpx; font-weight: 650; letter-spacing: 2rpx; }
+.capture-title { margin-top: 18rpx; font-size: 34rpx; font-weight: 650; }
+.capture-copy { margin-top: 10rpx; color: #bdc8d4; font-size: 24rpx; }
+.capture-actions { display: flex; margin-top: 34rpx; }
+.voice-button, .text-button { flex: 1; min-height: 82rpx; margin: 0; border-radius: 14rpx; font-size: 25rpx; font-weight: 650; }
+.voice-button { margin-right: 16rpx; background: #1f8a7a; color: #fff; }
+.text-button { background: #fff; color: #142b4a; }
+.voice-icon { margin-right: 10rpx; font-size: 18rpx; }
+.stats-card { display: flex; align-items: center; padding: 32rpx 16rpx; }
+.stat { flex: 1; text-align: center; }
+.stat-value { color: #142b4a; font-size: 38rpx; font-weight: 700; }
+.stat-label { margin-top: 6rpx; color: #7b8794; font-size: 22rpx; }
+.stat-divider { width: 1rpx; height: 66rpx; background: #e7ebef; }
+.pending-card { display: flex; align-items: stretch; }
+.pending-bar { width: 6rpx; margin-right: 22rpx; border-radius: 8rpx; background: #d98a31; }
+.pending-link { margin-top: 18rpx; color: #1f8a7a; font-size: 24rpx; font-weight: 600; }
+.coach-card { padding: 30rpx; border: 1rpx solid #cfe3df; border-radius: 20rpx; background: #edf6f4; }
+.coach-label { color: #176e62; font-size: 22rpx; font-weight: 650; letter-spacing: 1rpx; }
+.coach-copy { margin-top: 12rpx; color: #142b4a; font-size: 29rpx; font-weight: 600; line-height: 1.6; }
+.coach-reason { margin-top: 18rpx; color: #57736f; font-size: 22rpx; line-height: 1.5; }
+.evidence-mini { display: flex; align-items: center; }
+.mini-score { flex: 0 0 auto; margin-left: 20rpx; color: #1f8a7a; font-size: 32rpx; font-weight: 700; }

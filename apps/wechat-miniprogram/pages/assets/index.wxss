@@ -1,0 +1,9 @@
+.filter-bar { margin: 34rpx 0 28rpx; }
+.asset-card { position: relative; overflow: hidden; }
+.asset-top { align-items: flex-start; }
+.date { margin-right: 14rpx; color: #7b8794; font-size: 23rpx; }
+.asset-title { max-width: 520rpx; margin-top: -34rpx; padding-right: 110rpx; }
+.result-copy { padding-right: 12rpx; }
+.missing-line { margin-top: 18rpx; padding-top: 18rpx; border-top: 1rpx solid #eceff2; color: #a96317; font-size: 23rpx; }
+.source-cleared { margin-top: 16rpx; color: #87929d; font-size: 21rpx; }
+.empty-button { margin-top: 32rpx; }

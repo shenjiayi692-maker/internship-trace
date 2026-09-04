@@ -1,0 +1,28 @@
+{
+  "appid": "touristappid",
+  "compileType": "miniprogram",
+  "libVersion": "trial",
+  "projectname": "shixiji-prototype",
+  "miniprogramRoot": "./",
+  "setting": {
+    "useCompilerPlugins": ["typescript"],
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": false,
+    "urlCheck": false,
+    "compileHotReLoad": true,
+    "ignoreUploadUnusedFiles": true
+  },
+  "packOptions": {
+    "ignore": [
+      { "type": "folder", "value": "node_modules" },
+      { "type": "folder", "value": "work" },
+      { "type": "folder", "value": "outputs" },
+      { "type": "folder", "value": "scripts" },
+      { "type": "suffix", "value": ".test.ts" },
+      { "type": "file", "value": "README.md" },
+      { "type": "file", "value": "package.json" }
+    ]
+  }
+}

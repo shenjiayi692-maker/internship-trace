@@ -1,0 +1,22 @@
+<view class="screen screen-with-action">
+  <view class="row-between"><view><view class="eyebrow">JOB MATCH</view><view class="page-title">让JD找到真实证据</view></view><prototype-badge /></view>
+  <view class="page-subtitle">系统先拆解岗位要求，再判断哪些能力有证据、哪些仍是缺口。</view>
+  <view wx:if="{{step === 'input'}}">
+    <view class="section-head"><view class="section-title">职位描述</view><view class="section-link" bindtap="fillExample">填入示例</view></view>
+    <textarea class="textarea-box jd-input" value="{{rawText}}" maxlength="3000" placeholder="在这里粘贴完整JD……" bindinput="onInput" />
+    <view class="or"><view class="or-line"></view><view class="or-copy">或</view><view class="or-line"></view></view>
+    <button class="button-secondary screenshot-button" bindtap="chooseScreenshot">选择JD截图 · 模拟OCR</button>
+    <view wx:if="{{screenshotPath}}" class="screenshot-preview card"><image src="{{screenshotPath}}" mode="aspectFill" /><view class="grow"><view class="card-title screenshot-title">截图已在本地识别</view><view class="card-copy">生成后立即释放图片，只保留识别文字。</view></view><view class="remove" bindtap="removeScreenshot">移除</view></view>
+    <view wx:if="{{screenshotReleased}}" class="notice notice-info"><view class="dot"></view><view>截图临时路径已释放；没有上传或持久保存。</view></view>
+    <view class="notice"><view class="dot"></view><view>请勿上传包含联系人、内部薪资或其他敏感信息的截图。原型识别结果为预设文本。</view></view>
+  </view>
+  <view wx:else>
+    <view class="job-head card"><view class="pill">目标岗位</view><view class="job-title">{{job.title}}</view><view class="card-copy">{{job.company}} · 已提取 {{matches.length}} 项关键要求</view><view class="match-summary"><view><text class="summary-number">{{matchedCount}}</text><text class="summary-label">项有证据</text></view><view><text class="summary-number gap-number">{{gapCount}}</text><text class="summary-label">项是缺口</text></view></view></view>
+    <view class="section-head"><view class="section-title">要求与证据映射</view><view class="section-link" bindtap="backToInput">修改JD</view></view>
+    <view class="match-card card" wx:for="{{matches}}" wx:key="requirementId">
+      <view class="row-between"><view class="card-title match-title">{{item.requirementLabel}}</view><view class="pill {{item.strength === 'strong' ? '' : item.strength === 'partial' ? 'pill-warning' : 'pill-neutral'}}">{{item.strength === 'strong' ? '强匹配' : item.strength === 'partial' ? '部分匹配' : '能力缺口'}}</view></view>
+      <view class="card-copy">{{item.explanation}}</view><view wx:if="{{item.evidenceCardIds.length}}" class="evidence-count">已连接 {{item.evidenceCardIds.length}} 张事实卡</view><view wx:else class="gap-action">教练建议：在实习中主动争取一次相关任务，并记录个人贡献和结果。</view>
+    </view>
+  </view>
+  <view class="fixed-action"><button wx:if="{{step === 'input'}}" class="button-primary" bindtap="analyze">模拟分析JD</button><button wx:else class="button-primary" bindtap="generate">生成CV要点与面试准备</button></view>
+</view>

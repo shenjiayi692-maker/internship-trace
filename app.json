@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "apps/wechat-miniprogram/pages/onboarding/index",
+    "apps/wechat-miniprogram/pages/today/index",
+    "apps/wechat-miniprogram/pages/assets/index",
+    "apps/wechat-miniprogram/pages/generate/index",
+    "apps/wechat-miniprogram/pages/mine/index",
+    "apps/wechat-miniprogram/pages/capture/index",
+    "apps/wechat-miniprogram/pages/evidence-detail/index",
+    "apps/wechat-miniprogram/pages/weekly/index",
+    "apps/wechat-miniprogram/pages/jd/index",
+    "apps/wechat-miniprogram/pages/job-result/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "实习迹",
+    "navigationBarBackgroundColor": "#F5F7F9",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F5F7F9",
+    "backgroundTextStyle": "light"
+  },
+  "permission": {
+    "scope.record": {
+      "desc": "用于演示语音记录交互；原型不会保存或上传音频"
+    }
+  },
+  "tabBar": {
+    "color": "#7B8794",
+    "selectedColor": "#1F8A7A",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      { "pagePath": "apps/wechat-miniprogram/pages/today/index", "text": "今日" },
+      { "pagePath": "apps/wechat-miniprogram/pages/assets/index", "text": "资产" },
+      { "pagePath": "apps/wechat-miniprogram/pages/generate/index", "text": "生成" },
+      { "pagePath": "apps/wechat-miniprogram/pages/mine/index", "text": "我的" }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents"
+}

@@ -1,0 +1,11 @@
+.prototype-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8rpx 14rpx;
+  border-radius: 8rpx;
+  background: #edf0f3;
+  color: #65727f;
+  font-size: 20rpx;
+  font-weight: 600;
+  letter-spacing: 1rpx;
+}

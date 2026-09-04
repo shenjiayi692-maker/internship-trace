@@ -1,0 +1,11 @@
+.detail-title { max-width: 560rpx; margin-top: -62rpx; padding-right: 110rpx; font-size: 42rpx; }
+.notice { margin-top: 28rpx; }
+.detail-card { color: #354454; font-size: 27rpx; line-height: 1.7; }
+.action-item { display: flex; margin-bottom: 20rpx; }
+.action-item:last-child { margin-bottom: 0; }
+.action-index { display: flex; align-items: center; justify-content: center; flex: 0 0 auto; width: 42rpx; height: 42rpx; margin-right: 18rpx; border-radius: 50%; background: #edf6f4; color: #176e62; font-size: 21rpx; font-weight: 650; }
+.label { color: #7b8794; font-size: 22rpx; }
+.value { margin-top: 8rpx; color: #142b4a; font-size: 27rpx; }
+.metric-value { margin-top: 8rpx; color: #142b4a; font-size: 32rpx; font-weight: 650; }
+.result-input { min-height: 190rpx; }
+.source-action { margin-top: 16rpx; color: #1f8a7a; font-size: 22rpx; }

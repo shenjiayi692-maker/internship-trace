@@ -1,0 +1,26 @@
+<view class="screen screen-with-action">
+  <view class="row-between"><view><view class="eyebrow">WEEKLY REPORT</view><view class="page-title">整理这一周</view></view><prototype-badge /></view>
+  <view class="page-subtitle">默认周一至周五；你可以修改日期和表达方式。</view>
+  <view wx:if="{{!generated}}">
+    <view class="section-head"><view class="section-title">时间范围</view></view>
+    <view class="date-row"><picker class="date-picker" mode="date" value="{{startDate}}" bindchange="onStartChange"><view class="picker-label">开始</view><view class="picker-value">{{startDate}}</view></picker><view class="date-arrow">→</view><picker class="date-picker" mode="date" value="{{endDate}}" bindchange="onEndChange"><view class="picker-label">结束</view><view class="picker-value">{{endDate}}</view></picker></view>
+    <view class="section-head"><view class="section-title">周报风格</view></view>
+    <view class="segmented"><view class="segment {{tone === 'formal' ? 'segment-active' : ''}}" data-value="formal" bindtap="setTone">正式完整</view><view class="segment {{tone === 'concise' ? 'segment-active' : ''}}" data-value="concise" bindtap="setTone">团队简讯</view></view>
+    <view class="section-head"><view class="section-title">输出语言</view></view>
+    <view class="segmented"><view class="segment {{language === 'zh' ? 'segment-active' : ''}}" data-value="zh" bindtap="setLanguage">中文</view><view class="segment {{language === 'en' ? 'segment-active' : ''}}" data-value="en" bindtap="setLanguage">English</view></view>
+    <view class="notice notice-info report-note"><view class="dot"></view><view>系统将调用所选时间段内的事实卡；没有确认的数字会附带风险提示。</view></view>
+  </view>
+
+  <view wx:else class="result-section">
+    <view class="row-between result-meta"><view><view class="pill">{{language === 'zh' ? '中文' : 'English'}}</view><view class="muted text-small">{{startDate}} 至 {{endDate}}</view></view><view class="section-link" bindtap="generate">重新生成</view></view>
+    <view class="report-sheet"><view class="report-brand">实习迹 · 原型模拟</view><view class="report-title">{{artifact.title}}</view><view class="report-line" wx:for="{{artifact.content}}" wx:key="*this"><view class="report-heading" wx:if="{{item.length < 14}}">{{item}}</view><view class="report-copy" wx:else>{{item}}</view></view></view>
+    <view wx:if="{{artifact.riskFlags.length}}" class="notice"><view class="dot"></view><view><view class="risk-title">生成前需要确认</view><view wx:for="{{artifact.riskFlags}}" wx:key="*this">{{item}}</view></view></view>
+    <view class="section-head"><view class="section-title">引用的证据</view></view>
+    <view class="source-row card" wx:for="{{sourceCards}}" wx:key="id" data-id="{{item.id}}" bindtap="openSource"><view class="grow"><view class="card-title source-title">{{item.title}}</view><view class="text-small muted">完整度 {{item.score}}%</view></view><view class="chevron">›</view></view>
+  </view>
+  <canvas type="2d" id="reportCanvas" class="hidden-canvas"></canvas>
+  <view class="fixed-action">
+    <button wx:if="{{!generated}}" class="button-primary" bindtap="generate">模拟生成周报</button>
+    <view wx:else class="export-row"><button class="button-secondary export-button" bindtap="copy">复制文字</button><button class="button-primary export-button" loading="{{exporting}}" bindtap="exportImage">保存长图</button></view>
+  </view>
+</view>

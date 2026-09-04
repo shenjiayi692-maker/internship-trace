@@ -1,0 +1,24 @@
+<view class="screen">
+  <view class="eyebrow">CAREER EVIDENCE</view>
+  <view class="page-title">职业资产库</view>
+  <view class="page-subtitle">你确认过的事实，才会被用于周报、简历与面试准备。</view>
+  <view class="segmented filter-bar">
+    <view class="segment {{filter === 'all' ? 'segment-active' : ''}}" data-filter="all" bindtap="setFilter">全部</view>
+    <view class="segment {{filter === 'confirmed' ? 'segment-active' : ''}}" data-filter="confirmed" bindtap="setFilter">已确认</view>
+    <view class="segment {{filter === 'incomplete' ? 'segment-active' : ''}}" data-filter="incomplete" bindtap="setFilter">待补充</view>
+  </view>
+  <view wx:if="{{!empty}}" class="asset-card card" wx:for="{{cards}}" wx:key="id" data-id="{{item.id}}" bindtap="openCard">
+    <view class="row-between asset-top">
+      <view class="row"><view class="date">{{item.displayDate}}</view><view class="pill {{item.confirmed ? '' : 'pill-warning'}}">{{item.confirmed ? '事实已确认' : '待确认'}}</view></view>
+      <view class="score"><text>{{item.score}}</text><text class="score-label">完整度</text></view>
+    </view>
+    <view class="card-title asset-title">{{item.title}}</view>
+    <view class="card-copy result-copy">{{item.result || '结果尚未补充，点击完善这条证据。'}}</view>
+    <view class="pill-row"><view class="pill pill-neutral" wx:for="{{item.competencyTags}}" wx:key="*this">{{item}}</view></view>
+    <view wx:if="{{item.missingFields.length}}" class="missing-line">还缺：{{item.missingFields[0]}}</view>
+    <view wx:if="{{item.sourceCleared}}" class="source-cleared">源记录已按保留策略清理</view>
+  </view>
+  <view wx:if="{{empty}}" class="empty-state">
+    <view class="empty-icon">迹</view><view class="card-title">这里还没有符合条件的资产</view><view class="card-copy">完成一次记录并确认事实后，它会出现在这里。</view><button class="button-primary empty-button" bindtap="addRecord">记录今天的工作</button>
+  </view>
+</view>

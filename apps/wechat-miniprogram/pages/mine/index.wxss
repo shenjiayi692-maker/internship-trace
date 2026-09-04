@@ -1,0 +1,12 @@
+.data-summary { display: flex; padding: 30rpx 12rpx; }
+.summary-item { flex: 1; text-align: center; }
+.summary-value { color: #142b4a; font-size: 34rpx; font-weight: 700; }
+.summary-label { margin-top: 8rpx; color: #87929d; font-size: 21rpx; }
+.settings-card { padding: 8rpx 28rpx; }
+.setting-row, .policy-row { display: flex; align-items: center; min-height: 108rpx; }
+.setting-title { color: #142b4a; font-size: 27rpx; font-weight: 600; }
+.setting-copy { margin-top: 6rpx; color: #87929d; font-size: 21rpx; }
+.setting-value, .chevron { color: #6e7b88; font-size: 26rpx; }
+.policy-icon { display: flex; align-items: center; justify-content: center; flex: 0 0 auto; width: 58rpx; height: 58rpx; margin-right: 20rpx; border-radius: 14rpx; background: #edf6f4; color: #176e62; font-size: 22rpx; font-weight: 700; }
+.action-button { margin-bottom: 18rpx; }
+.bottom-notice { margin-top: 36rpx; }

@@ -1,0 +1,16 @@
+{
+  "name": "shixiji-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "实习迹微信小程序高保真原型",
+  "scripts": {
+    "test": "node --experimental-strip-types --test packages/core/src/index.test.ts",
+    "check": "node scripts/check-project.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,22 @@
+.date-row { display: flex; align-items: center; }
+.date-picker { flex: 1; padding: 22rpx; border: 1rpx solid #dbe2e8; border-radius: 16rpx; background: #fff; }
+.picker-label { color: #87929d; font-size: 21rpx; }
+.picker-value { margin-top: 8rpx; color: #142b4a; font-size: 26rpx; font-weight: 600; }
+.date-arrow { margin: 0 16rpx; color: #87929d; }
+.report-note { margin-top: 36rpx; }
+.result-section { margin-top: 34rpx; }
+.result-meta .muted { margin-top: 12rpx; }
+.report-sheet { margin: 26rpx 0 22rpx; padding: 38rpx 32rpx; border: 1rpx solid #e1e7ec; border-radius: 18rpx; background: #fff; }
+.report-brand { color: #1f8a7a; font-size: 20rpx; font-weight: 650; letter-spacing: 1rpx; }
+.report-title { margin: 22rpx 0 34rpx; color: #142b4a; font-size: 38rpx; font-weight: 720; }
+.report-line { margin-top: 18rpx; }
+.report-heading { margin-top: 28rpx; color: #142b4a; font-size: 27rpx; font-weight: 700; }
+.report-copy { color: #4e5d6c; font-size: 25rpx; line-height: 1.65; }
+.risk-title { margin-bottom: 8rpx; font-weight: 650; }
+.source-row { display: flex; align-items: center; }
+.source-title { font-size: 26rpx; }
+.chevron { color: #87929d; font-size: 34rpx; }
+.export-row { display: flex; }
+.export-button { flex: 1; margin: 0; }
+.export-button + .export-button { margin-left: 16rpx; }
+.hidden-canvas { position: fixed; left: -9999px; width: 690px; height: 1200px; }

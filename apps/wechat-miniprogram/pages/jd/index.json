@@ -1,0 +1,4 @@
+{
+  "navigationBarTitleText": "JD匹配",
+  "usingComponents": { "prototype-badge": "/apps/wechat-miniprogram/components/prototype-badge/index" }
+}

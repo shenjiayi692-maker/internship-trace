@@ -1,0 +1,4 @@
+{
+  "navigationBarTitleText": "生成",
+  "usingComponents": { "prototype-badge": "/apps/wechat-miniprogram/components/prototype-badge/index" }
+}

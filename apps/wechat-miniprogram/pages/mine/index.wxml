@@ -1,0 +1,22 @@
+<view class="screen" wx:if="{{settings}}">
+  <view class="eyebrow">LOCAL FIRST</view><view class="page-title">你的数据，由你决定</view><view class="page-subtitle">原型不登录、不联网。以下设置和数据仅保存在当前微信设备。</view>
+  <view class="section-head"><view class="section-title">本地概览</view></view>
+  <view class="card data-summary"><view class="summary-item"><view class="summary-value">{{entryCount}}</view><view class="summary-label">原始记录</view></view><view class="summary-item"><view class="summary-value">{{evidenceCount}}</view><view class="summary-label">证据卡</view></view><view class="summary-item"><view class="summary-value">{{dataSize}}</view><view class="summary-label">约占空间</view></view></view>
+  <view class="section-head"><view class="section-title">记录提醒</view></view>
+  <view class="card settings-card">
+    <view class="setting-row"><view><view class="setting-title">工作日提醒</view><view class="setting-copy">仅保存偏好，不真实发送通知</view></view><switch checked="{{settings.reminderEnabled}}" color="#1F8A7A" bindchange="toggleReminder" /></view>
+    <view class="divider"></view>
+    <picker mode="time" value="{{settings.reminderTime}}" bindchange="changeTime"><view class="setting-row"><view><view class="setting-title">提醒时间</view><view class="setting-copy">周一至周五</view></view><view class="setting-value">{{settings.reminderTime}} ›</view></view></picker>
+  </view>
+  <view class="section-head"><view class="section-title">隐私与保留</view></view>
+  <view class="card settings-card">
+    <view class="policy-row" bindtap="previewCleanup"><view class="policy-icon">90</view><view class="grow"><view class="setting-title">原始记录保留90天</view><view class="setting-copy">第83天提醒确认；证据卡长期保留</view></view><view class="chevron">›</view></view>
+    <view class="divider"></view>
+    <view class="policy-row"><view class="policy-icon">密</view><view class="grow"><view class="setting-title">敏感信息先脱敏</view><view class="setting-copy">公司名、手机号与邮箱在模拟处理前隐藏</view></view></view>
+  </view>
+  <view class="section-head"><view class="section-title">数据操作</view></view>
+  <button class="button-secondary action-button" bindtap="exportData">复制并导出全部数据</button>
+  <button class="button-secondary action-button" bindtap="resetDemo">恢复产品运营示例数据</button>
+  <button class="button-danger action-button" bindtap="clearAll">彻底删除本地数据</button>
+  <view class="notice notice-info bottom-notice"><view class="dot"></view><view>真实MVP接入AI后，模型请求将通过服务端代理；小程序中永远不会保存API密钥。</view></view>
+</view>

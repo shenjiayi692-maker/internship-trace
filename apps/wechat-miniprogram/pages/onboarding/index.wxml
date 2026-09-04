@@ -1,0 +1,23 @@
+<view class="onboarding">
+  <view class="brand-row">
+    <view class="brand-mark">迹</view>
+    <view class="brand-name">实习迹</view>
+    <prototype-badge />
+  </view>
+  <view class="hero">
+    <view class="eyebrow">每天一分钟</view>
+    <view class="hero-title">让每一段实习，<br/>都有迹可循。</view>
+    <view class="hero-copy">把零散工作沉淀成可验证、可复用的职业资产，随时生成周报、简历要点与面试准备。</view>
+  </view>
+  <view class="promise-list">
+    <view class="promise"><view class="promise-index">01</view><view><view class="promise-title">低成本记录</view><view class="promise-copy">文字或语音说一句，系统只追问最关键的问题。</view></view></view>
+    <view class="promise"><view class="promise-index">02</view><view><view class="promise-title">事实与表达分开</view><view class="promise-copy">每一条生成内容，都能回到你亲自确认的证据。</view></view></view>
+    <view class="promise"><view class="promise-index">03</view><view><view class="promise-title">默认保存在本地</view><view class="promise-copy">原型不登录、不上传；录音和截图仅模拟处理。</view></view></view>
+  </view>
+  <view class="consent" bindtap="toggleConsent">
+    <view class="checkbox {{checked ? 'checkbox-checked' : ''}}">{{checked ? '✓' : ''}}</view>
+    <view class="consent-copy">我已了解：这是高保真原型，AI、语音转写与截图识别均为本地模拟，不会发送真实网络请求。</view>
+  </view>
+  <button class="button-primary" bindtap="enterApp">开始建立职业资产</button>
+  <view class="footer-note">原始记录默认保留90天 · 已确认资产由你决定何时删除</view>
+</view>

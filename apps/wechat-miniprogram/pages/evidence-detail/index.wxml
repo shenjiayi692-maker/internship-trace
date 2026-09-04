@@ -1,0 +1,21 @@
+<view class="screen screen-with-action" wx:if="{{card}}">
+  <view class="row-between"><view class="pill {{card.confirmed ? '' : 'pill-warning'}}">{{card.confirmed ? '事实已确认' : '等待你的确认'}}</view><view class="score"><text>{{card.score}}</text><text class="score-label">完整度</text></view></view>
+  <view class="page-title detail-title">{{card.title}}</view>
+  <view class="pill-row"><view class="pill pill-neutral" wx:for="{{card.competencyTags}}" wx:key="*this">{{item}}</view></view>
+  <view class="notice notice-info"><view class="dot"></view><view>这是事实层。生成周报或CV时可以改变表达，但不会增加你没有确认过的数字或结果。</view></view>
+
+  <view class="section-head"><view class="section-title">背景</view></view>
+  <view class="card detail-card">{{card.context}}</view>
+  <view class="section-head"><view class="section-title">你的行动</view></view>
+  <view class="card detail-card"><view class="action-item" wx:for="{{card.actions}}" wx:key="*this"><view class="action-index">{{index + 1}}</view><view class="grow">{{item}}</view></view></view>
+  <view class="section-head"><view class="section-title">产出与工具</view></view>
+  <view class="card detail-card"><view class="label">产出</view><view class="value">{{card.output}}</view><view class="divider"></view><view class="label">工具</view><view class="pill-row"><view class="pill" wx:for="{{card.tools}}" wx:key="*this">{{item}}</view></view></view>
+  <view class="section-head"><view class="section-title">结果</view><view class="warning text-small" wx:if="{{!card.result}}">建议补充</view></view>
+  <textarea class="textarea-box result-input" value="{{editableResult}}" placeholder="这项工作最终被用于什么？带来了什么变化？" bindinput="onResultInput" />
+  <view class="section-head"><view class="section-title">量化信息</view></view>
+  <view class="card detail-card" wx:for="{{card.metrics}}" wx:key="label"><view class="row-between"><view><view class="label">{{item.label}}</view><view class="metric-value">{{item.value}}</view></view><view class="pill {{item.confirmed ? '' : 'pill-warning'}}">{{item.confirmed ? '已确认' : '口径待确认'}}</view></view></view>
+  <view class="section-head"><view class="section-title">来源记录</view></view>
+  <view class="card source-card" wx:if="{{sourceEntry}}" bindtap="copySource"><view class="text-small muted">{{sourceEntry.date}} · {{sourceEntry.mode === 'voice' ? '语音转写' : '文字记录'}}</view><view class="card-copy">{{sourceEntry.redactedText}}</view><view class="source-action">点击复制脱敏原文</view></view>
+  <view class="card-copy" wx:else>源记录已按90天保留策略清理；经你确认的职业资产仍会保留。</view>
+  <view class="fixed-action"><button class="button-primary" bindtap="saveAndConfirm">保存并确认事实</button></view>
+</view>

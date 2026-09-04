@@ -1,0 +1,4 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": { "prototype-badge": "/apps/wechat-miniprogram/components/prototype-badge/index" }
+}

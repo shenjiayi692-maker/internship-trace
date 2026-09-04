@@ -1,0 +1,36 @@
+.capture-screen { min-height: 100vh; background: #f5f7f9; }
+.capture-head { display: flex; align-items: center; justify-content: space-between; padding: 24rpx 32rpx 16rpx; }
+.capture-progress { width: 320rpx; height: 6rpx; margin-top: 14rpx; overflow: hidden; border-radius: 10rpx; background: #dfe5ea; }
+.progress-bar { height: 100%; border-radius: 10rpx; background: #1f8a7a; transition: width 0.2s; }
+.flow-content { padding: 48rpx 32rpx 190rpx; }
+.flow-step { color: #1f8a7a; font-size: 23rpx; font-weight: 650; letter-spacing: 1rpx; }
+.flow-title { margin-top: 18rpx; color: #142b4a; font-size: 44rpx; font-weight: 720; line-height: 1.35; }
+.flow-copy { margin-top: 16rpx; color: #6e7b88; font-size: 25rpx; line-height: 1.65; }
+.mode-switch { margin-top: 42rpx; }
+.main-input { min-height: 320rpx; margin-top: 24rpx; }
+.privacy-line { margin-top: 20rpx; color: #87929d; font-size: 21rpx; text-align: center; }
+.voice-panel { margin-top: 24rpx; padding: 42rpx 28rpx 28rpx; border: 1rpx solid #dbe2e8; border-radius: 20rpx; background: #fff; text-align: center; }
+.voice-status { color: #6e7b88; font-size: 24rpx; }
+.hold-button { display: flex; align-items: center; justify-content: center; width: 210rpx; height: 210rpx; margin: 34rpx auto; border-radius: 50%; background: #142b4a; color: #fff; font-size: 27rpx; font-weight: 650; }
+.hold-button.holding { background: #1f8a7a; transform: scale(.96); }
+.transcript { padding: 22rpx; border-radius: 14rpx; background: #f5f7f9; text-align: left; }
+.transcript-copy { margin-top: 12rpx; color: #354454; font-size: 24rpx; line-height: 1.6; }
+.notice { margin-top: 34rpx; }
+.answer-input { min-height: 260rpx; margin-top: 28rpx; }
+.question-count { margin-top: 18rpx; color: #87929d; font-size: 22rpx; text-align: right; }
+.review-scroll { height: calc(100vh - 118rpx); }
+.review-content { padding-top: 34rpx; }
+.preview-card { margin-top: 28rpx; }
+.preview-title { max-width: 500rpx; margin-top: -52rpx; padding-right: 100rpx; }
+.preview-label { margin-top: 26rpx; color: #7b8794; font-size: 21rpx; font-weight: 650; }
+.preview-action { margin-top: 10rpx; color: #354454; font-size: 25rpx; line-height: 1.55; }
+.edit-button { margin-top: 20rpx; }
+.capture-actions-fixed { position: fixed; z-index: 5; right: 0; bottom: 0; left: 0; display: flex; align-items: center; padding: 20rpx 32rpx calc(20rpx + env(safe-area-inset-bottom)); border-top: 1rpx solid #e1e6ea; background: #fff; }
+.cancel { flex: 0 0 auto; padding: 30rpx 30rpx 30rpx 0; color: #6e7b88; font-size: 25rpx; }
+.next-button { flex: 1; margin: 0; }
+.follow-buttons { display: flex; flex: 1; }
+.skip-button { flex: 0 0 190rpx; margin: 0 16rpx 0 0; }
+.saved-state { display: flex; flex-direction: column; align-items: stretch; justify-content: center; min-height: calc(100vh - 120rpx); padding: 48rpx; }
+.saved-check { display: flex; align-items: center; justify-content: center; width: 116rpx; height: 116rpx; margin: 0 auto 28rpx; border-radius: 50%; background: #edf6f4; color: #1f8a7a; font-size: 52rpx; font-weight: 700; }
+.saved-state .flow-title { text-align: center; }
+.saved-button { width: 100%; margin-top: 22rpx; }
