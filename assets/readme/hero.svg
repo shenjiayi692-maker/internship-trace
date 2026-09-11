@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Internship Trace</title>
+  <desc id="desc">Dated work notes become verified fact cards that remain connected to reports, CV bullets, and interview questions.</desc>
+  <rect width="1200" height="420" rx="24" fill="#f4efe4"/>
+  <path d="M38 105 H1160 M38 173 H1160 M38 241 H1160 M38 309 H1160 M196 28 V390" stroke="#d8d0c0"/>
+  <path d="M94 28 V390" stroke="#e4a095" stroke-width="2"/>
+  <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+    <text x="126" y="69" fill="#bd4d3e" font-size="17" font-weight="800" letter-spacing="3">CAREER EVIDENCE, NOT CAREER FICTION</text>
+    <text x="126" y="148" fill="#18344a" font-size="65" font-weight="800">Internship Trace</text>
+    <text x="126" y="203" fill="#4d6170" font-size="23">Turn daily work into facts you can prove—and reuse.</text>
+  </g>
+  <g transform="translate(112 264)" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">
+    <text fill="#7a7166" font-size="16">2026 / 09 / 11</text>
+    <circle cx="8" cy="44" r="8" fill="#1f8a7a"/>
+    <path d="M8 53 V111" stroke="#1f8a7a" stroke-width="3"/>
+    <text x="28" y="51" fill="#18344a" font-size="18" font-weight="700">captured a real contribution</text>
+    <text x="28" y="83" fill="#69766f" font-size="16">confirmed outcome · source retained</text>
+  </g>
+  <g transform="translate(716 50)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+    <g transform="rotate(-3 165 90)">
+      <rect width="334" height="168" rx="16" fill="#fffdf8" stroke="#bfc7c4" stroke-width="2"/>
+      <text x="24" y="35" fill="#1f8a7a" font-size="15" font-weight="800" letter-spacing="2">FACT CARD · 92%</text>
+      <text x="24" y="75" fill="#18344a" font-size="21" font-weight="750">Reduced weekly reporting friction</text>
+      <rect x="24" y="96" width="255" height="8" rx="4" fill="#d8dedb"/>
+      <rect x="24" y="117" width="205" height="8" rx="4" fill="#d8dedb"/>
+      <text x="24" y="149" fill="#8b685d" font-size="14">SOURCE  /  daily entry #014</text>
+    </g>
+    <path d="M164 181 C168 213 190 223 226 230" fill="none" stroke="#bd4d3e" stroke-width="3"/>
+    <path d="M219 222 L231 231 L217 236" fill="none" stroke="#bd4d3e" stroke-width="3" stroke-linecap="round"/>
+    <g transform="translate(108 236)">
+      <rect width="382" height="112" rx="12" fill="#18344a"/>
+      <text x="22" y="31" fill="#80d2c5" font-size="15" font-weight="800" letter-spacing="2">CV BULLET · TRACEABLE</text>
+      <text x="22" y="66" fill="#f3f5f4" font-size="18">Built a reporting workflow from</text>
+      <text x="22" y="91" fill="#f3f5f4" font-size="18">verified weekly evidence.</text>
+      <circle cx="353" cy="26" r="10" fill="#bd4d3e"/>
+    </g>
+  </g>
+</svg>

@@ -1,76 +1,84 @@
-# 实习迹 · 微信小程序高保真原型
+<p align="center">
+  <img src="./assets/readme/hero.svg" width="100%" alt="Internship Trace turns daily internship notes into verified evidence, weekly reports, CV bullets, and interview preparation">
+</p>
 
-“实习迹”帮助正在实习的用户把每天零散的工作沉淀为可验证、可复用的职业证据，并进一步生成周报、匹配JD、整理CV要点与准备面试追问。
+Internship Trace is a high-fidelity WeChat Mini Program prototype for turning scattered daily work into career evidence you can inspect and reuse. It captures a small fact, asks at most two follow-up questions, and keeps every generated weekly report, JD match, CV bullet, and interview prompt connected to its source evidence.
 
-**Internship Trace** — a high-fidelity WeChat Mini Program prototype that turns scattered daily internship work into verifiable, reusable career evidence, then generates weekly reports, JD matches, CV bullets and interview follow-ups from it.
-
-| | |
-|---|---|
-| 形态 | 微信小程序原生开发（WXML / WXSS / TypeScript），无框架 |
-| 结构 | monorepo：页面层 `apps/` + 平台无关内核 `packages/core` + 领域契约 `packages/contracts` |
-| 数据 | 全部本地存储，零网络请求、零账号、零云函数 |
-| AI | 确定性模拟（追问、整理、生成、OCR），便于评审交互而不引入模型不确定性 |
-| 测试 | `node --test` 8 个用例，覆盖证据评分 / 追问上限 / 脱敏 / 90 天清理 / JD 匹配 / 来源追溯 |
-| 状态 | 高保真原型，**不是可上线产品**，边界见下方「原型边界」 |
-
-设计上把「能不能换端」当作硬约束：`packages/core` 与 `packages/contracts` 不允许依赖 `wx`、浏览器 API 或任何模型 SDK，未来做海外 PWA 时只重写页面层。
-
-## 直接体验
-
-1. 打开微信开发者工具，选择“导入项目”。
-2. 项目目录选择本仓库根目录。
-3. AppID可使用测试号；项目已配置 `touristappid`。
-4. 编译后从隐私引导页开始体验。
-
-建议依次体验：
-
-1. “今日”使用文字或按住说话记录。
-2. 回答或跳过最多两个追问，生成事实卡。
-3. 在“资产”中补充结果并确认事实。
-4. 在“生成”中输出周报，或粘贴/截图模拟分析JD。
-5. 查看CV要点的证据来源和针对性面试问题。
-6. 在“我的”中导出、恢复示例数据或彻底删除。
-
-## 原型边界
-
-- 没有网络请求、账号、云数据库或支付。
-- AI追问、整理、生成与OCR结果均为确定性模拟。
-- 语音路径只申请麦克风权限并模拟转写，不启动录音、不保存音频。
-- JD截图使用微信临时路径预览，模拟识别后从页面状态释放。
-- 所有产品数据使用微信本地存储。
-- 长图由本地Canvas生成，保存相册需要用户授权。
-
-## 目录结构
+## The evidence chain
 
 ```text
-apps/wechat-miniprogram/  原生小程序页面、样式、组件和微信适配
-packages/core/            平台无关的评分、脱敏、保留和匹配规则
-packages/contracts/       领域类型、可替换接口和连贯示例数据
-scripts/                  工程完整性检查
+daily note → follow-up → fact card → confirmation → weekly report / JD match / CV / interview
 ```
 
-未来海外PWA应重新实现页面层，只复用 `packages/core` 和 `packages/contracts`。核心包不得依赖 `wx`、浏览器API或具体模型SDK。
+The prototype is designed around one rule: generated wording may change, but it must not add an unconfirmed number or outcome.
 
-## 本地验证
+- Capture with text or a simulated voice-transcription flow
+- Score evidence completeness and prompt for missing context
+- Redact sensitive text before it enters the reusable fact layer
+- Match job requirements to existing evidence—and show gaps honestly
+- Generate weekly reports, CV bullets, and targeted interview questions
+- Open any generated item back to the fact cards that support it
+- Export locally as copied text or a canvas-rendered report image
 
-导入微信开发者工具体验不需要安装第三方依赖。若要运行完整的自动测试与类型检查，请使用Node.js 22及以上并先安装开发依赖：
+## Try the prototype
 
-```sh
+1. Install dependencies with `npm install`.
+2. Open WeChat DevTools and import the repository root.
+3. Compile with the configured `touristappid`.
+4. Start from the privacy screen, then follow Today → Assets → Generate.
+
+Suggested walkthrough:
+
+1. Add a text or voice-style daily record.
+2. Answer or skip up to two follow-up questions.
+3. Confirm the resulting fact card and add an outcome if needed.
+4. Generate a weekly report or paste a JD for simulated analysis.
+5. Inspect the sources behind a CV bullet and its follow-up interview questions.
+6. Export data, restore the sample dataset, or delete everything from My.
+
+## Prototype boundary
+
+This repository makes the reviewable interaction real while keeping external systems simulated:
+
+- All product data stays in WeChat local storage.
+- There are no accounts, network requests, cloud functions, model SDKs, or payments.
+- AI follow-up, organization, generation, OCR, and voice transcription are deterministic simulations.
+- The voice path requests microphone permission but does not record or retain audio.
+- JD screenshots use a temporary WeChat path and are released after simulated recognition.
+
+It is not a production Mini Program.
+
+## Portable core
+
+| Package | Responsibility |
+| --- | --- |
+| `apps/wechat-miniprogram/` | Native WXML, WXSS, TypeScript pages, components, and WeChat adapters |
+| `packages/core/` | Platform-independent scoring, redaction, retention, generation, and matching rules |
+| `packages/contracts/` | Domain types, replaceable ports, and coherent sample data |
+| `scripts/` | Project structure and boundary checks |
+
+The core and contracts packages cannot depend on `wx`, browser APIs, or a model SDK. A future PWA can replace the page layer without rewriting the evidence rules.
+
+## Verify
+
+Node.js 22 or newer is recommended.
+
+```bash
 npm install
 npm test
 npm run typecheck
 npm run check
 ```
 
-测试覆盖证据评分、最多两次追问、敏感信息脱敏、90天清理、JD匹配和生成内容来源追溯。
+The test suite covers evidence scoring, the two-question cap, redaction, 90-day retention, JD matching, risk flags, and source traceability.
 
-## 数据规则
+## Data rules
 
-- 原始记录默认90天到期，第83天进入提醒窗口。
-- 原始记录到期只清除源记录；事实卡保留并标记来源已清理。
-- 未确认的数字会进入风险提示，不会被当作已验证结果。
-- 所有生成结果必须带有事实卡ID，可返回资产库核对。
+- Raw entries expire after 90 days and enter a reminder window on day 83.
+- Expiry clears the raw source but retains the fact card with a source-cleared marker.
+- Unconfirmed numbers become visible risk flags, not verified results.
+- Every generated artifact carries fact-card IDs that can be inspected in the asset library.
 
-## 接入真实MVP前
+## Before a real MVP
 
-真实AI必须通过服务端代理接入，禁止把模型API密钥放进小程序。还需另行实现模型供应商的数据保留配置、匿名会话、请求脱敏、成本限额、真实语音转写/OCR、微信订阅消息和审核所需的隐私协议。
+A production version needs a server-side model proxy, provider retention settings, anonymous-session design, request redaction, cost limits, real speech-to-text and OCR, subscription messages, privacy documentation, and platform review. Model keys must never be embedded in the Mini Program.
