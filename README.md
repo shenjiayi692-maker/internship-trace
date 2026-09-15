@@ -2,6 +2,19 @@
   <img src="./assets/readme/hero.svg" width="100%" alt="Internship Trace turns daily internship notes into verified evidence, weekly reports, CV bullets, and interview preparation">
 </p>
 
+<p align="center"><strong>English</strong> · <a href="./README.zh-CN.md">中文</a></p>
+
+Three months into an internship you cannot remember what you actually did, and a
+CV needs specifics.
+
+```bash
+git clone https://github.com/shenjiayi692-maker/internship-trace && cd internship-trace && npm i && npm test
+```
+
+That runs the test suite over the platform-independent core — evidence scoring,
+redaction, 90-day retention, JD matching — with no WeChat toolchain. Seeing the
+interface does need WeChat DevTools; see below.
+
 Internship Trace is a high-fidelity WeChat Mini Program prototype for turning scattered daily work into career evidence you can inspect and reuse. It captures a small fact, asks at most two follow-up questions, and keeps every generated weekly report, JD match, CV bullet, and interview prompt connected to its source evidence.
 
 ## The evidence chain
